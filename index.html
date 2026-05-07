@@ -677,13 +677,21 @@ function App() {
       )}
       {showImpressum && (
         <div onClick={() => setShowImpressum(false)} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16 }}>
-          <div onClick={(e) => e.stopPropagation()} style={{ background: '#161b22', border: '1px solid #30363d', borderRadius: 10, maxWidth: 420, padding: '28px 26px', color: '#e6edf3' }}>
+          <div onClick={(e) => e.stopPropagation()} style={{ background: '#161b22', border: '1px solid #30363d', borderRadius: 10, maxWidth: 440, padding: '28px 26px', color: '#e6edf3' }}>
             <div style={{ fontSize: 18, fontWeight: 700, color: '#58a6ff', marginBottom: 16 }}>Impressum</div>
             <div style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 18 }}>
               <strong>Alexander Scherer</strong><br/>
               Mertensstraße 18<br/>
               13587 Berlin<br/><br/>
+              <span style={{ color: '#8b949e', fontSize: 12 }}>Steuer-Nr.: 061/224/09633<br/>Kleinunternehmer gem. §19 UStG — keine Umsatzsteuer wird ausgewiesen.</span><br/><br/>
               <span style={{ color: '#8b949e', fontSize: 12 }}>Diese Seite ist ein privates Lernprojekt und wurde mit KI-Unterstützung erstellt. Es wird keine Haftung für die Richtigkeit der Inhalte übernommen.</span>
+            </div>
+            <div style={{ background: '#0d1117', border: '1px solid #21262d', borderRadius: 8, padding: '14px 16px', marginBottom: 14 }}>
+              <div style={{ fontSize: 12, color: '#8b949e', marginBottom: 8 }}>☕ Wenn dir die Seite hilft, freue ich mich über eine kleine Spende:</div>
+              <a href="https://paypal.me/AlexanderGlauche?locale.x=de_DE&country.x=DE" target="_blank" rel="noopener noreferrer"
+                style={{ display: 'block', textAlign: 'center', padding: '10px', background: '#0070ba', color: 'white', textDecoration: 'none', borderRadius: 6, fontSize: 13, fontWeight: 600 }}>
+                💛 Mit PayPal spenden
+              </a>
             </div>
             <button onClick={() => setShowImpressum(false)}
               style={{ width: '100%', padding: '10px', background: '#21262d', color: '#e6edf3', border: '1px solid #30363d', borderRadius: 6, cursor: 'pointer', fontSize: 13, fontFamily: 'inherit' }}>
@@ -836,6 +844,11 @@ function StatusBar({ levelInfo, screen, activeTopic, onShowImpressum }) {
       <span style={{ fontSize: 10 }}>LV {levelInfo.level} — {Math.round(levelInfo.progress * 100)}% bis LV {levelInfo.level + 1}</span>
       <span style={{ color: 'rgba(210,255,211,0.5)' }}>|</span>
       <span onClick={onShowImpressum} style={{ cursor: 'pointer', textDecoration: 'underline' }}>Impressum</span>
+      <span style={{ color: 'rgba(210,255,211,0.5)' }}>|</span>
+      <a href="https://paypal.me/AlexanderGlauche?locale.x=de_DE&country.x=DE" target="_blank" rel="noopener noreferrer"
+         style={{ color: '#ffd700', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
+        💛 Spenden
+      </a>
       <span style={{ color: 'rgba(210,255,211,0.5)' }}>|</span>
       <span>WiSo Terminal v1.0</span>
     </div>
